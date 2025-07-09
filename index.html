@@ -26,12 +26,12 @@
     }
 
     .header img {
-      height: 140px;
+      height: 160px;
       margin-right: 20px;
     }
 
     .header h1 {
-      font-size: 42px;
+      font-size: 48px;
       font-weight: bold;
       margin: 0;
     }
@@ -66,16 +66,44 @@
 
     .student-slider {
       width: 30%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .student-slider .slides {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      animation: slideUp 10s infinite;
     }
 
     .student-slider img {
-      width: 100%;
-      height: auto;
+      width: 100px;
+      height: 140px;
+      object-fit: cover;
       border: 2px solid white;
-      border-radius: 8px;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto 15px;
+      background-color: white;
+      padding: 5px;
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(0); }
+      25% { transform: translateY(-160px); }
+      45% { transform: translateY(-160px); }
+      50% { transform: translateY(-320px); }
+      70% { transform: translateY(-320px); }
+      75% { transform: translateY(-480px); }
+      95% { transform: translateY(-480px); }
+      100% { transform: translateY(0); }
     }
 
     .footer {
@@ -91,19 +119,6 @@
 
     .footer p {
       margin: 4px 0;
-    }
-
-    .footer-strip {
-      width: 100%;
-      text-align: center;
-      background-color: #222;
-      padding: 10px;
-    }
-
-    .footer-strip img {
-      width: 100%;
-      max-height: 80px;
-      object-fit: contain;
     }
 
     .footer, .footer-strip {
@@ -129,11 +144,13 @@
       <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/event.png" alt="Event Image">
     </div>
     <div class="student-slider">
-      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 1">
-      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student2.jpg" alt="Student 2">
-      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student3.jpg" alt="Student 3">
-      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student4.jpg" alt="Student 4">
-      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student5.jpg" alt="Student 5">
+      <div class="slides">
+        <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 1">
+        <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 2">
+        <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 3">
+        <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 4">
+        <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 5">
+      </div>
     </div>
   </div>
 
@@ -147,10 +164,6 @@
 
     <h3>Address</h3>
     <p>বড়াবেরিয়া, আরামবাগ, পশ্চিমবঙ্গ - ৭১২৬২১</p>
-  </div>
-
-  <div class="footer-strip">
-    <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/1169e066-7490-476b-b9a9-49648f145205.png" alt="Footer Strip">
   </div>
 
 </body>
