@@ -154,9 +154,6 @@
     <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473784151_1718642165367296_1284079618084773805_n.jpg" width="384" height="384">
     <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473786390_1718642158700630_5973641829415867559_n.jpg" width="384" height="384">
     <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/475753551_1004680331684652_4292172640850177065_n.jpg" width="384" height="384">
-    
-    <!-- ৪ ইঞ্চি ফাঁকা রাখার জন্য একটি ফাঁকা স্পেস -->
-    <div style="display:inline-block; width:384px;"></div>
   </marquee>
 </div>
   
@@ -174,8 +171,11 @@
 <!-- Scroll animation -->
 <style>
 @keyframes slideUp {
-  0% { top: 100%; }
-  100% { top: -100%; }
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-160px); }
+  50% { transform: translateY(-320px); }
+  75% { transform: translateY(-480px); }
+  100% { transform: translateY(0); }
 }
 </style>
   <div class="footer">
