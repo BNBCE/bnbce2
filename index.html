@@ -26,31 +26,55 @@
     }
 
     .header img {
-      height: 80px;
-      margin-right: 15px;
+      height: 120px;
+      margin-right: 20px;
     }
 
     .header h1 {
-      font-size: 28px;
+      font-size: 36px;
       font-weight: bold;
       margin: 0;
+    }
+
+    .nav-line {
       text-align: center;
+      padding: 10px 0;
     }
 
-    nav {
-      text-align: right;
-      padding: 10px 30px;
-    }
-
-    nav a {
+    .nav-line a {
       color: yellow;
       text-decoration: none;
-      margin-left: 20px;
+      margin: 0 20px;
       font-weight: bold;
     }
 
-    main {
-      flex: 1;
+    .event-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .event-image {
+      width: 65%;
+    }
+
+    .event-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .student-slider {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .student-slider img {
+      width: 100%;
+      height: auto;
+      border: 2px solid white;
+      border-radius: 8px;
     }
 
     .footer {
@@ -76,26 +100,35 @@
     <h1>স্বাগতম বড়াবেরিয়া জাতীয় কম্পিউটার প্রশিক্ষণ কেন্দ্র</h1>
   </div>
 
-  <nav>
-    <a href="student_login.html">Student Login</a>
-    <a href="admin-login-site/">admin-login-site</a>
-    <a href="courses.html">Courses</a>
-  </nav>
+  <div class="nav-line">
+    <a href="#">Student Login</a>
+    <a href="#">admin-login-site</a>
+    <a href="#">Courses</a>
+  </div>
 
-  <main>
-    <!-- মূল কনটেন্ট চাইলে এখানে রাখতে পারেন -->
-  </main>
+  <div class="event-section">
+    <div class="event-image">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/event.png" alt="Event Image">
+    </div>
+    <div class="student-slider">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.png" alt="Student 1">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student2.png" alt="Student 2">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student3.png" alt="Student 3">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student4.png" alt="Student 4">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student5.png" alt="Student 5">
+    </div>
+  </div>
 
   <div class="footer">
     <h3>About</h3>
-    <p>আমাদের প্রতিষ্ঠান জাতীয় কম্পিউটার প্রশিক্ষণের জন্য নিবেদিত।</p>
+    <p>আমাদের প্রতিষ্ঠান জাতীয় কম্পিউটার প্রশিক্ষণের জন্য নিবেদিত।</p>
 
     <h3>Contact</h3>
     <p>ফোন: ৯০৫১৫৩৬৫৯৯</p>
     <p>ইমেইল: info@bnbce.org</p>
 
     <h3>Address</h3>
-    <p>বড়াবেরিয়া, আরামবাগ, পশ্চিমবঙ্গ - ৭১২৬২১</p>
+    <p>বড়াবেরিয়া, আরামবাগ, পশ্চিমবঙ্গ - ৭১২৬২১</p>
   </div>
 
 </body>
