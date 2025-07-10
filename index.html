@@ -19,28 +19,22 @@
     }
 
     .header {
-      align-items: center;
-      margin: 20px;
-      justify-content: center;
+      width: 100%;
     }
 
-    .header img {
-      height: 112px;
-      margin-right: 10px;
-    }
-
-    .header h1 {
-      font-size: 48px;
-      font-weight: bold;
+    .banner-image {
+      width: 100%;
+      height: auto;
+      display: block;
       margin: 0;
     }
 
     .nav-line {
       text-align: center;
       padding: 10px 0;
-      background-color: rgba(0, 128, 0, 0.6); /* সবুজ স্বচ্ছ ব্যাকগ্রাউন্ড */
-      border-radius: 8px;
-      margin: 0 20px;
+      background-color: rgba(0, 128, 0, 0.6);
+      border-radius: 0;
+      margin: 0;
     }
 
     .nav-line a {
@@ -50,6 +44,16 @@
       font-weight: bold;
     }
 
+    marquee.notice {
+      background-color: rgba(255, 102, 0, 0.6);
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 0 20px;
+      border-radius: 6px;
+    }
+
     .event-section {
       display: flex;
       justify-content: space-between;
@@ -57,17 +61,8 @@
       flex: 1;
     }
 
-    .event-image {
-      width: 60%;
-    }
-
-    .event-image img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
     .student-slider-wrapper {
-      width: %;
+      width: auto;
       display: flex;
       justify-content: flex-end;
       margin-left: 20px;
@@ -133,48 +128,65 @@
 </head>
 <body>
 
-  <div class="header img">
+  <!-- 🖼️ Banner -->
+  <div class="header">
     <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/bannar/bannar1.png" alt="BNBCE Banner" class="banner-image">
   </div>
+
+  <!-- 🟩 Navigation Bar -->
+  <!-- 🟩 Navigation Bar -->
+<div class="nav-line" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <div class="nav-left">
+    <a href="#">Home</a>
   </div>
-  <div class="nav-line">
-      <a href="#"> Courses :- ADCA ( 1YEAR ) ,DCA ( 6 MONTH ) , BASIC ( 3 MONTH ),EGYAN (CLASS-III TO IX) 1 YEAR </a>
+  <div class="nav-center" style="flex: 1; text-align: center;">
+    <a href="#">Courses :- ADCA (1YEAR), DCA (6 MONTH), BASIC (3 MONTH), EGYAN (CLASS-III TO IX) 1 YEAR</a>
+  </div>
+  <div class="nav-right">
     <a href="#">Student Login</a>
     <a href="https://bnbce.github.io/bnbce2/admin-login-site/">Admin Login</a>
-    
   </div>
-<marquee behavior="scroll" direction="left" scrollamount="5" style="background-color: rgba(255, 102, 0, 0.6); color: white; padding: 10px; font-weight: bold; font-size: 18px; margin-left: .2in; margin-right: .2in;">
-  একটি জানালা একটি দৃশ্য, একটি কম্পিউটার পুরো বিশ্ব
-</marquee>
-
-
-
-  <div class="event-section">
-   <div align="left">
-  <marquee direction="left" scrollamount="4" style="width: 90%;">
-    <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/469534734_1691012824796897_4488469346082055230_n.jpg" width="384" height="384">
-    <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/120098451_759134857984703_4662266475717046437_n.jpg" width="384" height="384">
-    <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473784151_1718642165367296_1284079618084773805_n.jpg" width="384" height="384">
-    <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473786390_1718642158700630_5973641829415867559_n.jpg" width="384" height="384">
-    <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/475753551_1004680331684652_4292172640850177065_n.jpg" width="384" height="384">
-  </marquee>
 </div>
-    <div class="student-slider-wrapper">
-      <div class="student-slider">
-        <div class="slides">
-          <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 1">
-          <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 2">
-          <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 3">
-          <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 4">
-            <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 1">
-          <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 2">
-          <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 3">
-          <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 4">
-        </div>
-      </div>
+
+
+  <!-- 📢 Notice -->
+  <marquee class="notice" direction="left" scrollamount="5">
+    একটি জানালা একটি দৃশ্য, একটি কম্পিউটার পুরো বিশ্ব
+  </marquee>
+
+  <!-- 🖼️ Event Image Slider + Student Slider -->
+  <div class="event-section">
+    <marquee direction="left" scrollamount="3" loop="infinite" style="width: 100%; white-space: nowrap;">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/469534734_1691012824796897_4488469346082055230_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/120098451_759134857984703_4662266475717046437_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473784151_1718642165367296_1284079618084773805_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473786390_1718642158700630_5973641829415867559_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/475753551_1004680331684652_4292172640850177065_n.jpg" width="384" height="384">
+
+      <!-- Repeat again for smooth loop -->
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/469534734_1691012824796897_4488469346082055230_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/120098451_759134857984703_4662266475717046437_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473784151_1718642165367296_1284079618084773805_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/473786390_1718642158700630_5973641829415867559_n.jpg" width="384" height="384">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/EVENT/475753551_1004680331684652_4292172640850177065_n.jpg" width="384" height="384">
+    </marquee>
+
+    <!-- 📸 Student Slider -->
+<div class="student-slider-wrapper">
+  <div class="student-slider">
+    <div class="slides">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 1">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 2">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 3">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 4">
+      <img src="https://raw.githubusercontent.com/BNBCE/bnbce2/main/Image/student1.jpg" alt="Student 5">
     </div>
   </div>
+</div>
 
+  </div>
+
+  <!-- 👣 Footer -->
   <div class="footer">
     <h3>About</h3>
     <p>আমাদের প্রতিষ্ঠান জাতীয় কম্পিউটার প্রশিক্ষণের জন্য নিবেদিত।</p>
@@ -185,7 +197,7 @@
 
     <h3>Address</h3>
     <p>বেড়াবেড়িয়া ,আমডাঙ্গা,পশ্চিমবঙ্গ পিন-৭০০১২১</p>
-  </div> 
+  </div>
 
 </body>
 </html>
