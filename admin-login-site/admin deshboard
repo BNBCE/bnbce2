@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{font-family:Arial;background:#f2f6f9;padding:20px}
+    h2{text-align:center}
+    table{width:100%;background:#fff;border-collapse:collapse;margin-bottom:30px}
+    th,td{border:1px solid #ddd;padding:10px;text-align:center}
+    th{background:#0d6efd;color:#fff}
+    input,button{padding:8px;margin:5px}
+    button{background:#0d6efd;color:#fff;border:none;cursor:pointer}
+    button:hover{background:#084298}
+    .box{background:#fff;padding:15px;margin-bottom:20px}
+  </style>
+</head>
+
+<body>
+
+<h2>🧑‍💼 Admin Dashboard</h2>
+
+<!-- COURSE ADD -->
+<div class="box">
+<h3>Add Course</h3>
+<input id="cname" placeholder="Course Name">
+<input id="cduration" placeholder="Duration">
+<input id="cfee" placeholder="Fee">
+<button onclick="addCourse()">Add Course</button>
+</div>
+
+<table id="courseTable">
+<tr>
+  <th>Course</th><th>Duration</th><th>Fee</th>
+</tr>
+</table>
+
+<!-- STUDENT ADD -->
+<div class="box">
+<h3>Add Student</h3>
+<input id="sname" placeholder="Student Name">
+<input id="scourse" placeholder="Course">
+<input id="sbatch" placeholder="Batch Time">
+<button onclick="addStudent()">Add Student</button>
+</div>
+
+<table id="studentTable">
+<tr>
+  <th>Name</th><th>Course</th><th>Batch</th>
+</tr>
+</table>
+
+<!-- 🔥 Firebase -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+/* 🔴 Firebase config বসান */
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+  projectId: "YOUR_PROJECT"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+/* ADD COURSE */
+window.addCourse = function(){
+  const name = cname.value;
+  set(ref(db,"courses/"+name),{
+    duration: cduration.value,
+    fee: cfee.value
+  });
+}
+
+/* ADD STUDENT */
+window.addStudent = function(){
+  const name = sname.value;
+  set(ref(db,"students/"+name),{
+    course: scourse.value,
+    batch: sbatch.value
+  });
+}
+
+/* LOAD COURSES */
+onValue(ref(db,"courses"),snap=>{
+  courseTable.innerHTML="<tr><th>Course</th><th>Duration</th><th>Fee</th></tr>";
+  snap.forEach(c=>{
+    const v=c.val();
+    courseTable.innerHTML+=`
+      <tr><td>${c.key}</td><td>${v.duration}</td><td>₹${v.fee}</td></tr>`;
+  });
+});
+
+/* LOAD STUDENTS */
+onValue(ref(db,"students"),snap=>{
+  studentTable.innerHTML="<tr><th>Name</th><th>Course</th><th>Batch</th></tr>";
+  snap.forEach(s=>{
+    const v=s.val();
+    studentTable.innerHTML+=`
+      <tr><td>${s.key}</td><td>${v.course}</td><td>${v.batch}</td></tr>`;
+  });
+});
+</script>
+
+</body>
+</html>
 
